@@ -176,3 +176,5 @@ def drugs_manage():
             break
         else:
             print("⚠ Invalid choice, try again.\n")
+            
+load_drugs_data()

@@ -145,4 +145,4 @@ def serials_manage():
         else:
             print("Invalid choice! Try again.\n")
             
-        
+load_serials_data()
