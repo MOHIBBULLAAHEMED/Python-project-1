@@ -1,7 +1,7 @@
 from login import login, input_password
 from serials import add_serials, serials_manage
 from drugs import drugs_manage
-from patients import patient_check
+from patients import patient_check,patient_prescription,show_prescription,old_prescriptions
 
 
 while True:
@@ -43,4 +43,44 @@ if role == "Manager":
         else:
             print("Invalid choice! Try again.\n")
 elif role == "Doctor":
-    patient_check()
+    while True:
+        print("""
+==== Doctor Panel ====
+1. Check Patient
+2. Prescription Panel
+3. Show Old Prescriptions
+4. Exit
+""")
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            patient_check()
+
+        elif choice == "2":
+            while True:
+                print("""
+--- Prescription Panel ---
+1. Add Prescription
+2. Show Prescription
+3. Back
+""")
+                sub_choice = input("Choose an option: ")
+
+                if sub_choice == "1":
+                    patient_prescription()
+                elif sub_choice == "2":
+                    show_prescription()
+                elif sub_choice == "3":
+                    break
+                else:
+                    print("⚠ Invalid choice! Try again.\n")
+
+        elif choice == "3":
+            old_prescriptions()
+
+        elif choice == "4":
+            print("Exiting Doctor Panel...\n")
+            break
+
+        else:
+            print("⚠ Invalid choice! Try again.\n")
