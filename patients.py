@@ -1,6 +1,6 @@
 import os
 import ast
-from datetime import datetime  # 🔹 DateTime এর জন্য
+from datetime import datetime  
 
 prescription = {
     "Serial": [],
@@ -9,13 +9,13 @@ prescription = {
     "gender": [],
     "medicine": [],
     "tests": [],
-    "datetime": []  # 🔹 DateTime field added
+    "datetime": []  
 }
 
 file_name = "serials.txt"
 prescription_file = "prescription.txt"
 
-# ========== 🔹 MEDICINE PANEL ==========
+
 def medicine_input_menu():
     medicines = []
 
@@ -49,7 +49,7 @@ def medicine_input_menu():
         else:
             print("❌ Invalid choice! Try again.\n")
 
-# ========== 🔹 TEST PANEL ==========
+
 def test_input_menu():
     tests = []
 
@@ -79,7 +79,7 @@ def test_input_menu():
         else:
             print("❌ Invalid choice! Try again.\n")
 
-# ========== 🔹 SAVE PRESCRIPTION ==========
+
 def save_prescription():
     with open(prescription_file, "a", encoding="utf-8") as f:
         for i in range(len(prescription["Serial"])):
@@ -98,7 +98,7 @@ def save_prescription():
             )
             f.write(line)
 
-# ========== 🔹 PRESCRIPTION ENTRY ==========
+
 def patient_prescription():
     serial = input("Enter patient serial: ")
     found = False
@@ -115,16 +115,15 @@ def patient_prescription():
                 found = True
                 medicine = medicine_input_menu()
                 tests = test_input_menu()
-                now = datetime.now().strftime("%Y/%m/%d %H:%M:%S")  # 🔹 current datetime
+                now = datetime.now().strftime("%Y/%m/%d %H") 
 
-                # Store in dictionary
                 prescription["Serial"].append(serial_no)
                 prescription["name"].append(name)
                 prescription["age"].append(age)
                 prescription["gender"].append(gender)
                 prescription["medicine"].append(medicine)
                 prescription["tests"].append(tests)
-                prescription["datetime"].append(now)  # 🔹 add datetime
+                prescription["datetime"].append(now)  
 
                 save_prescription()
                 print("\n✔ Prescription Saved Successfully!\n")
@@ -133,7 +132,7 @@ def patient_prescription():
     if not found:
         print("❌ Patient not found\n")
 
-# ========== 🔹 SHOW PRESCRIPTION ==========
+
 def show_prescription():
     patient_name = input("Enter patient name: ").strip()
 
@@ -153,7 +152,7 @@ def show_prescription():
                 print(f"Name: {name}")
                 print(f"Age: {age}")
                 print(f"Gender: {gender}")
-                print(f"Date & Time: {dt_str}")  # 🔹 show datetime
+                print(f"Date & Time: {dt_str}")  
 
                 if not medicine:
                     print("\nMedicines:",end="")
@@ -201,7 +200,7 @@ def old_prescriptions():
                 print(f"⚠ Error reading line: {line}\n{e}")
                 continue
 
-            # Check if name matches AND not the current prescription
+            
             if patient_name.lower() == name.lower() and serial_no != current_serial:
                 found_any = True
                 print("===== Previous Prescription =====")
