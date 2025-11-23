@@ -1,3 +1,0 @@
-1,Hana,24,Female,01800000000,fever
-2,Suhyun,18,Female,01800000000,fever
-3,borsha,15,Female,o1800000000,fever
