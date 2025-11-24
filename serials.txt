@@ -1,0 +1,4 @@
+1,nobin,23,Male,01800000000,fever
+3,borsha,15,Female,01814498540,fever
+4,borsha,15,Female,01814498540,fever
+5,salman,23,Male,01852967077,fever

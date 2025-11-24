@@ -50,7 +50,7 @@ def add_serials():
     serial_no= next_serial()
     print(f"\nAuto Assigned Serial No: {serial_no}")
 
-    name = input("Patient Name: ")
+    name = input("Patient Name: ").lower()
     age = age_check()
     gender = gender_check()
     contact = input("Contact: ")

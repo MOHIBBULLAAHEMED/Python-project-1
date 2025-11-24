@@ -41,7 +41,7 @@ def save_drugs():
             )
 
 def add_drugs():
-    name = input("Drug Name: ")
+    name = input("Drug Name: ").lower()
     
     if name in dict_drugs["name"]:
         piece_per_box = input("Add Strips to Box: ")
@@ -97,7 +97,7 @@ def add_discount(price):
 
 
 def drug_sell():
-    name = input("Drug Name: ")
+    name = input("Drug Name: ").lower()
 
     if name in dict_drugs["name"]:
         i = dict_drugs["name"].index(name)

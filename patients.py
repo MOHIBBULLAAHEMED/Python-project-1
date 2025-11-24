@@ -85,7 +85,7 @@ def save_prescription():
         for i in range(len(prescription["Serial"])):
             med_text = str(prescription["medicine"][i])
             test_text = str(prescription["tests"][i])
-            datetime_text = prescription["datetime"][i]  # 🔹 include datetime
+            datetime_text = prescription["datetime"][i]  
 
             line = (
                 f"{prescription['Serial'][i]}-"
@@ -178,7 +178,7 @@ def show_prescription():
 def old_prescriptions():
 
     patient_name=input("Patient Name: ")
-    current_serial=input("Current Name: ")
+    current_serial=input("Current Serial: ")
 
     if not os.path.exists(prescription_file):
         print("❌ No prescriptions saved yet.")
@@ -203,7 +203,7 @@ def old_prescriptions():
             
             if patient_name.lower() == name.lower() and serial_no != current_serial:
                 found_any = True
-                print("===== Previous Prescription =====")
+                print("\n===== Previous Prescription =====")
                 print(f"Serial: {serial_no}")
                 print(f"Name: {name}")
                 print(f"Age: {age}")
